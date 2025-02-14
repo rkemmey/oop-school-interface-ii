@@ -23,5 +23,7 @@ while run:
         student_data['school_id'] = input('Enter student school id: \n')
         student_data['password']  = input('Enter student password: \n')
         school.add_student(student_data)
+    elif mode == '4':
+        school.delete_student()
     else:
-        pass 
+        print('invalid input')

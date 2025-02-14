@@ -18,9 +18,18 @@ class School:
             if str(s.school_id) == str(id):
                 return s
             
-    def add_student(self, dict):
-        new = Student(**dict)
-        self.students.append(new)
+    def add_student(self, data):
+        try:
+            new = Student(**data)
+            self.students.append(new)
+            print(new)
+        except Exception as e:
+            print(e)
 
-    def delete_student(self, dict):
-        pass
+    def delete_student(self):
+        student = self.find_student_by_id()
+        for s in self.students:
+            if str(s.school_id) == student:
+                self.students.remove(s)
+                print('removed')
+                return None
