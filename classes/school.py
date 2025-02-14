@@ -17,3 +17,10 @@ class School:
         for s in self.students:
             if str(s.school_id) == str(id):
                 return s
+            
+    def add_student(self, dict):
+        new = Student(**dict)
+        self.students.append(new)
+
+    def delete_student(self, dict):
+        pass
